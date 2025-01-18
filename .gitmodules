@@ -1,0 +1,6 @@
+[submodule "htc"]
+	path = htc
+	url = git@github.com:Livingpool/htc.git
+[submodule "kickstart.nvim"]
+	path = nvim
+	url = git@github.com:Livingpool/kickstart.nvim.git
