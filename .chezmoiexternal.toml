@@ -21,3 +21,13 @@
 	url = "https://github.com/romkatv/powerlevel10k/archive/v1.20.0.tar.gz"
 	exact = true
 	stripComponents = 1
+[".config/nvim"]
+	type = "git-repo"
+	url = "https://github.com/livingpool/kickstart.nvim.git"
+	refreshPeriod = "168h"
+	[".config/nvim".clone]
+		{{- if eq .chezmoi.hostname "tim_liu" }}
+		args = [ "-b htc", "--single-branch"]
+		{{- else }}
+		args = [ "-b main", "--single-branch"]
+		{{- end -}}
