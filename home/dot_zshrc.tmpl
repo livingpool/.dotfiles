@@ -1,0 +1,5 @@
+{{- if eq .chezmoi.hostname "tim_liu" -}}
+{{-   include ".zshrc_htc" -}}
+{{- else -}}
+{{-   include ".zshrc_personal" -}}
+{{- end -}}
