@@ -154,5 +154,9 @@ bindkey -v
 # Emacs keybinding, i dont think i need it yet
 # bindkey '^R' history-incremental-search-backward
 
+# for compiling htmx-lsp; see https://github.com/immunant/c2rust/issues/380
+export CC=$(brew --prefix llvm)/bin/clang
+export CXX=$(brew --prefix llvm)/bin/clang++
+
 # cargo and rust
 source ~/.cargo/env
