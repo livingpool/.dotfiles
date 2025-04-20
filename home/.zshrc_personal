@@ -84,7 +84,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions ssh)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions ssh zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -147,9 +147,6 @@ export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# use zsh in vim mode
-bindkey -v
 
 # Emacs keybinding, i dont think i need it yet
 # bindkey '^R' history-incremental-search-backward
