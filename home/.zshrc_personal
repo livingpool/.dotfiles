@@ -130,6 +130,9 @@ vv() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# add ~/.local/bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 # Source Go installed packages
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

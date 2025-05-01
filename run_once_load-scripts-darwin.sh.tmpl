@@ -1,0 +1,6 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+find ~/.local/bin -type f -exec chmod +x {} \;
+
+{{ end -}}
