@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Note: run this script with source so that the script run in the current shell.
+# Otherwise, bcos bash scripts by default run in subshell, exports don't work.
+
+# TODO:there may be better workarounds
+
+# Check if aws cli is installed
+if ! command -v aws >/dev/null 2>&1; then
+    echo "Error: AWS CLI is not installed or not in PATH"
+    return 1 2>/dev/null || exit 1
+fi
+
+# ref: https://www.baeldung.com/linux/reading-output-into-array
+# another option on linux is to use readarray
+# read differs in zsh and bash: https://stackoverflow.com/questions/36453146/why-does-read-a-fail-in-zsh
+IFS=$'\n' read -r -d '' -A profiles < <(aws configure list-profiles)
+
+if [ ${#profiles[@]} -eq 0 ]; then
+    echo "No AWS profiles found in ~/.aws/config"
+    return 1 2>/dev/null || exit 1
+fi
+
+echo "Select an AWS profile:"
+select profile in ${profiles[@]}; do
+    if [ -n "$profile" ]; then
+	break
+    else
+	echo "Invalid selection. Try again."
+    fi
+done
+
+key=$(aws configure get aws_access_key_id --profile "$profile")
+secret=$(aws configure get aws_secret_access_key --profile "$profile")
+
+# Check if credentials exist
+if [ -z "$key" ] || [ -z "$secret" ]; then
+    echo "Missing credentials for profile '$profile'"
+    return 1 2>/dev/null || exit 1
+fi
+
+# Optionally get region
+region=$(aws configure get region --profile "$PROFILE")
+
+export AWS_ACCESS_KEY_ID=$key
+export AWS_SECRET_ACCESS_KEY=$secret
+[ -n $region ] && export AWS_REGION=$region
+
+echo "Switched to AWS profile '$profile'"

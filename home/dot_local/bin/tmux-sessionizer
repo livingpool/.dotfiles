@@ -6,7 +6,7 @@ else
     projects=$(
         find \
             ~/ \
-            -mindepth 2 -maxdepth 3 -type d -name .git |
+            -mindepth 2 -maxdepth 4 -type d -name .git |
             sed 's|\(.*\)\/\.git|\1|g'
     )
     selected=$(printf "%s\n" $projects | fzf)
