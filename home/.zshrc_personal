@@ -115,6 +115,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll='ls -al'
 alias nvim='NVIM_APPNAME=nvim nvim' # Kickstart
+alias vim='nvim'
+alias python='python3'
 
 vv() {
   # Assumes all configs exist in directories named ~/.config/nvim-*
