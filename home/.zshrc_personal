@@ -162,3 +162,6 @@ export CXX=$(brew --prefix llvm)/bin/clang++
 
 # cargo and rust
 source ~/.cargo/env
+
+# Add Docker Desktop for Mac (docker)
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
