@@ -159,6 +159,8 @@ export NVM_DIR="$HOME/.nvm"
 # for compiling htmx-lsp; see https://github.com/immunant/c2rust/issues/380
 export CC=$(brew --prefix llvm)/bin/clang
 export CXX=$(brew --prefix llvm)/bin/clang++
+# added after running into error: cgo defaults to homebrew clang, not apple clang
+export PATH=$(brew --prefix llvm)/bin:$PATH
 
 # cargo and rust
 source ~/.cargo/env
