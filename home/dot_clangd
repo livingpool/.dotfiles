@@ -1,0 +1,22 @@
+# ref: https://medium.com/unixification/how-to-setup-clangd-with-gcc-headers-and-neovim-lsp-for-competitive-programming-2f3f98425ae1
+CompileFlags:
+  Add:
+    - -DLOCAL
+    - -Wall
+    - -O2
+    - -Wextra
+    - -Wshadow
+    - -Wconversion
+    - -Wfloat-equal
+    - -Wno-unused-const-variable
+    - -Wno-sign-conversion
+    - -std=c++17
+    - -I/opt/homebrew/Cellar/gcc/15.1.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../../../../include/c++/15
+    - -I/opt/homebrew/Cellar/gcc/15.1.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../../../../include/c++/15/aarch64-apple-darwin24
+    - -I/opt/homebrew/Cellar/gcc/15.1.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../../../../include/c++/15/backward
+    - -I/opt/homebrew/Cellar/gcc/15.1.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/include
+    - -I/opt/homebrew/Cellar/gcc/15.1.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/include-fixed
+    - -I/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include
+    - -I/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
+  Index:
+    Background: Skip
