@@ -1,5 +1,8 @@
 {{- if eq .chezmoi.hostname "tim_liu" -}}
 {{-   include ".zshrc_htc" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+# add config files for other distros
+{{-   include ".zshrc_linux" -}}
 {{- else -}}
 {{-   include ".zshrc_personal" -}}
 {{- end -}}

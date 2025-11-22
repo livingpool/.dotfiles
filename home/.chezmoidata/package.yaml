@@ -1,0 +1,33 @@
+packages:
+  darwin:
+    brews:
+    - 'git'
+    - 'cmake'
+    - 'gcc'
+    - 'llvm'
+    - 'tree'
+    - 'tmux'
+    - 'neovim'
+    - 'sqlite'
+    - 'node'
+    - 'go'
+    - 'python'
+    - 'wget'
+    - 'bat'
+    - 'jq'
+    - 'fzf'
+    - 'diff-so-fancy'
+    - 'chezmoi'
+    casks:
+    - 'font-jetbrains-mono-nerd-font'
+    - 'google-chrome'
+    - 'spotify'
+    - 'karabiner-elements'
+    - 'raycast'
+  ubuntu:
+    packages:
+    - 'openssh-server'
+    - 'ripgrep'
+    - 'gcc'
+    - 'gdb'
+
